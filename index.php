@@ -1,4 +1,4 @@
 <?php
 header("Content-Type: application/json;charset=utf-8");
-$debug = var_export($_REQUEST, true);
+$debug = file_get_contents('php://input');
 echo "{\"fulfillmentText\": \"$debug\"}";
