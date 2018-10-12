@@ -1,4 +1,4 @@
 <?php
 header("Content-Type: application/json;charset=utf-8");
-$data=file_get_contents( 'php://input');
-echo "{\"fulfillmentText\": $data}";
+$data=var_export($_REQUEST, true);
+echo "{\"fulfillmentText\": \"$data\"}";
