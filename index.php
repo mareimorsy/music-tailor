@@ -15,7 +15,7 @@ echo '{
           "items": [
             {
               "simpleResponse": {
-                "ssml": "<speak>I can play a sound <audio src=\"https://music-tailor.herokuapp.com/songs/believer.mp3\">your wave file</audio></speak>"
+                "ssml": "<speak>'.$songName.' is now playing <audio src=\"https://music-tailor.herokuapp.com/songs/believer.mp3\">your wave file</audio></speak>"
               }
             }
           ]
