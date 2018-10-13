@@ -8,11 +8,7 @@ $string = "<speak><audio src='https://actions.google.com/sounds/v1/cartoon/slide
 
 $songURL="https://music-tailor.herokuapp.com/songs/believer.mp3";
 
-echo '{
-    "simpleResponse": {
-    "ssml": "<speak>'.$songName.' is now playing <audio src=\"'.$songURL.'\">your wave file</audio></speak>"
-    }
-}';
+echo '{"ssml": "<speak>'.$songName.' is now playing <audio src=\"'.$songURL.'\">your wave file</audio></speak>"}';
 
 
 
