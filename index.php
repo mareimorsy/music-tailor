@@ -15,7 +15,7 @@ echo '{
           "items": [
             {
               "simpleResponse": {
-                "ssml": "<speak><audio src=\"https://music-tailor.herokuapp.com/music/believer.ogg\">your wave file</audio></speak>",
+                "ssml": "<speak><audio src=\"http://music-tailor.herokuapp.com/songs/believer.ogg\">your wave file</audio></speak>",
                 "displayText": "Your song is now playing..."
               }
             }
