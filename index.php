@@ -5,18 +5,16 @@ $songName  = $req->queryResult->parameters->songName;
 $queryText = $req->queryResult->queryText;
 // echo "{\"fulfillmentText\": \"$speech\"}";
 $string = "<speak><audio src='https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg'>didnt get your MP3 audio file</audio></speak>";
+$baseURL="https://music-tailor.herokuapp.com/songs/";
 
-$songURL="https://music-tailor.herokuapp.com/songs/believer.mp3";
+// getSongName("play shape of you song");
+// getSongName("play shape of you");
+// getSongName("play circus music");
+// getSongName("I'd like to listen to shape of you song");
+// getSongName("I would like to listen to shape of you song");
+// getSongName("I would like to listen to shape of you");
+// getSongName("I'd like to listen to shape of you");
 
-
-// echo getSongName("play shape of you song");
-// echo getSongName("play shape of you");
-// echo getSongName("play circus music");
-// echo getSongName("I'd like to listen to shape of you song");
-// echo getSongName("I would like to listen to shape of you song");
-// echo getSongName("I would like to listen to shape of you");
-// echo getSongName("I'd like to listen to shape of you");
-// echo getSongName("I'd like to listen to shape of you");
 
 
 function getSongName($queryText){
@@ -25,39 +23,44 @@ function getSongName($queryText){
     foreach($removeList as $word){
         $songName = str_replace($word, '', $songName);
     }
-    return $songName;
+    return trim($songName);
 }
 
+if (! isset($songName)){
+    $songName = getSongName($queryText);
+}
 
 switch ($songName) {
     case "shape of you":
-        $songURL = "";
+        $songURL = "shape_of_you.mp3";
         break;
-    case "blue":
-        $songURL = "";
+    case "believer":
+        $songURL = "believer.mp3";
         break;
-    case "green":
-        $songURL = "";
+    case "try everything":
+        $songURL = "try_everything.mp3";
         break;
     default:
         $songURL = "";
 }
 
+echo $baseURL.$songURL;
 
 
-// echo '{
-//     "payload": {
-//       "google": {
-//         "expectUserResponse": true,
-//         "richResponse": {
-//           "items": [
-//             {
-//               "simpleResponse": {
-//                 "ssml": "<speak>'.$songName.' is now playing <audio src=\"'.$songURL.'\">your wave file</audio></speak>"
-//               }
-//             }
-//           ]
-//         }
-//       }
-//     }
-//   }';
+
+echo '{
+    "payload": {
+      "google": {
+        "expectUserResponse": true,
+        "richResponse": {
+          "items": [
+            {
+              "simpleResponse": {
+                "ssml": "<speak>'.$songName.' is now playing <audio src=\"'.$songURL.'\">your wave file</audio></speak>"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }';
