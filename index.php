@@ -6,6 +6,7 @@ $songName = $req->queryResult->parameters->songName;
 $string = "<speak><audio src='https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg'>didnt get your MP3 audio file</audio></speak>";
 // echo "{\"fulfillmentText\": \"$string\"}";
 
+$songURL="https://music-tailor.herokuapp.com/songs/believer.mp3";
 
 echo '{
     "payload": {
@@ -15,7 +16,7 @@ echo '{
           "items": [
             {
               "simpleResponse": {
-                "ssml": "<speak>I can play a sound <audio src=\"https://music-tailor.herokuapp.com/songs/believer.mp3\">your wave file</audio></speak>",
+                "ssml": "<speak>'.$songName.' is now playing...<audio src=\"'.$songURL.'\">Unable to play the song</audio></speak>",
                 "displayText": "This is a SSML sample. Make sure your sound is enabled to hear the demo"
               }
             }
