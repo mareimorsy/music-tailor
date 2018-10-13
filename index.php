@@ -7,8 +7,8 @@ $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 fwrite($handle, file_get_contents('php://input'));
 fclose($handle);
 
-$songName  = $req->queryResult->parameters->songName;
-$queryText = $req->queryResult->queryText;
+$songName  = strtolower($req->queryResult->parameters->songName);
+$queryText = strtolower($req->queryResult->queryText);
 // echo "{\"fulfillmentText\": \"$speech\"}";
 $string = "<speak><audio src='https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg'>didnt get your MP3 audio file</audio></speak>";
 $baseURL="https://music-tailor.herokuapp.com/songs/";
