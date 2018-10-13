@@ -26,7 +26,7 @@ function getSongName($queryText){
     return trim($songName);
 }
 
-if (! isset($songName)){
+if (! empty($songName)){
     $songName = getSongName($queryText);
 }
 
@@ -54,7 +54,8 @@ echo '{
           "items": [
             {
               "simpleResponse": {
-                "ssml": "<speak>'.$songName.' is now playing <audio src=\"'.$songURL.'\">your wave file</audio></speak>"
+                "ssml": "<speak>'.$songName.' is now playing <audio src=\"'.$songURL.'\">your wave file</audio></speak>",
+                "queryText": "$queryText"
               }
             }
           ]
