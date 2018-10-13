@@ -16,4 +16,4 @@ I can also substitute phrases, like the <sub alias="World Wide Web Consortium">W
 Finally, I can speak a paragraph with two sentences.
 <p><s>This is sentence one.</s><s>This is sentence two.</s></p>
 </speak>';
-echo '{"ssml": '.$string.', "displayText": "Hello"}';
+echo '{"ssml": '."$string".', "displayText": "Hello"}';
