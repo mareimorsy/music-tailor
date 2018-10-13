@@ -4,8 +4,8 @@ $req=json_decode(file_get_contents('php://input'), false);
 
 $my_file = 'req.json';
 $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
-fwrite($handle, $req);
-// fclose($handle);
+fwrite($handle, file_get_contents('php://input'));
+fclose($handle);
 
 $songName  = $req->queryResult->parameters->songName;
 $queryText = $req->queryResult->queryText;
