@@ -16,7 +16,7 @@ echo '{
           "items": [
             {
               "simpleResponse": {
-                "ssml": "<speak>'.$songName.' is now playing...<audio src=\"'.$songURL.'\">Unable to play the song</audio></speak>",
+                "ssml": "<speak>'.$songName.' is now playing...<audio src="'.$songURL.'">Unable to play the song</audio></speak>",
                 "displayText": "This is a SSML sample. Make sure your sound is enabled to hear the demo"
               }
             }
