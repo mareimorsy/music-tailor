@@ -2,11 +2,10 @@
 header("Content-Type: application/json;charset=utf-8");
 $req=json_decode(file_get_contents('php://input'), false);
 
-$my_file = 'file.txt';
+$my_file = 'req.json';
 $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 fwrite($handle, $req);
-fclose($handle);
-
+// fclose($handle);
 
 $songName  = $req->queryResult->parameters->songName;
 $queryText = $req->queryResult->queryText;
