@@ -32,7 +32,7 @@ function getSongName($queryText){
     return trim($songName);
 }
 
-if (! empty($songName)){
+if (empty($songName)){
     $songName = getSongName($queryText);
 }
 
