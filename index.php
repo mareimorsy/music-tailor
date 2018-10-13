@@ -7,19 +7,28 @@ $string = "<speak><audio src='https://actions.google.com/sounds/v1/cartoon/slide
 // echo "{\"fulfillmentText\": \"$string\"}";
 
 $songURL="https://music-tailor.herokuapp.com/songs/believer.mp3";
+
 echo '{
-    "payload": {
-      "google": {
-        "expectUserResponse": true,
-        "richResponse": {
-          "items": [
-            {
-              "simpleResponse": {
-                "ssml": "<speak>'.$songName.' is now playing <audio src=\"'.$songURL.'\">your wave file</audio></speak>"
-              }
-            }
-          ]
-        }
-      }
+    "simpleResponse": {
+    "ssml": "<speak>'.$songName.' is now playing <audio src=\"'.$songURL.'\">your wave file</audio></speak>"
     }
-  }';
+}';
+
+
+
+// echo '{
+//     "payload": {
+//       "google": {
+//         "expectUserResponse": true,
+//         "richResponse": {
+//           "items": [
+//             {
+//               "simpleResponse": {
+//                 "ssml": "<speak>'.$songName.' is now playing <audio src=\"'.$songURL.'\">your wave file</audio></speak>"
+//               }
+//             }
+//           ]
+//         }
+//       }
+//     }
+//   }';
