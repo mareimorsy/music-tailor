@@ -44,6 +44,8 @@ switch ($songName) {
         $songURL = "";
 }
 
+$songURL = $baseURL.$songURL;
+
 echo '{
     "payload": {
       "google": {
