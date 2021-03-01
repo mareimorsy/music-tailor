@@ -46,6 +46,12 @@ switch ($songName) {
     case "try everything":
         $songURL = "try_everything.mp3";
         break;
+    case "baby shark":
+      $songURL = "baby_shark.mp3";
+      break;
+    case "perfect":
+      $songURL = "perfect.mp3";
+      break;
     default:
         $songURL = "";
 }
